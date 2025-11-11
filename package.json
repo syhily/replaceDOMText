@@ -1,0 +1,66 @@
+{
+  "name": "replaceDOMText",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A lightweight utility to find and replace text within DOM nodes.",
+  "author": "Yufan Sheng <syhily@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/syhily/replaceDOMText#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/syhily/replaceDOMText.git"
+  },
+  "bugs": {
+    "url": "https://github.com/syhily/replaceDOMText/issues"
+  },
+  "keywords": [
+    "dom",
+    "text",
+    "replace",
+    "find",
+    "typescript",
+    "esm",
+    "html",
+    "replacement",
+    "utility"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "clean": "rimraf dist",
+    "dev": "tsup src/index.ts --watch",
+    "lint": "eslint . --ext .ts",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^6.2.0",
+    "@types/jsdom": "^27.0.0",
+    "@types/node": "^24.10.0",
+    "eslint": "^9.39.1",
+    "eslint-plugin-format": "^1.0.2",
+    "jiti": "^2.6.1",
+    "jsdom": "^27.1.0",
+    "rimraf": "^6.1.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

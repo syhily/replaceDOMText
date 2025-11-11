@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    /* Core Settings */
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "NodeNext",
+    "resolveJsonModule": true,
+
+    /* Test Support */
+    "types": ["vitest/globals", "node"],
+    /* Type Safety */
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    /* Project Output */
+    "declaration": true,
+    "declarationDir": "./dist",
+    "inlineSources": true,
+    "outDir": "./dist",
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+
+    "forceConsistentCasingInFileNames": true,
+    /* Module Handling */
+    "isolatedModules": true,
+
+    "skipLibCheck": true
+  },
+  "include": ["src", "test", "vitest.config.ts"],
+  "exclude": ["dist", "node_modules"]
+}

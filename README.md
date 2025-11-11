@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/replaceDOMText.svg?style=flat-square)](https://www.npmjs.com/package/replaceDOMText)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/replaceDOMText?style=flat-square)](https://bundlephobia.com/package/replaceDOMText)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat-square\&logo=typescript)](https://www.typescriptlang.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 [![ESM Only](https://img.shields.io/badge/module-ESM%20only-brightgreen?style=flat-square)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 
@@ -13,13 +13,13 @@ Now written in **TypeScript**, distributed as **ES modules**, and fully typed fo
 
 ## ✨ Features
 
-* 🔍 Find text using **RegExp** or **string**
-* 🧩 **Replace** or **wrap** matches with text or DOM elements
-* 💬 Supports **cross-node matches**
-* 🧠 Fully **typed API** with IntelliSense
-* ⚙️ Built-in `preset: 'prose'` for natural text replacement
-* ♻️ Supports **revert()** to undo replacements
-* 📦 Ships as **pure ESM + `.d.ts`** definitions
+- 🔍 Find text using **RegExp** or **string**
+- 🧩 **Replace** or **wrap** matches with text or DOM elements
+- 💬 Supports **cross-node matches**
+- 🧠 Fully **typed API** with IntelliSense
+- ⚙️ Built-in `preset: 'prose'` for natural text replacement
+- ♻️ Supports **revert()** to undo replacements
+- 📦 Ships as **pure ESM + `.d.ts`** definitions
 
 ## 🚀 Installation
 
@@ -31,7 +31,7 @@ Or via CDN:
 
 ```html
 <script type="module">
-  import replaceDOMText from 'https://cdn.jsdelivr.net/npm/replaceDOMText/+esm';
+  import replaceDOMText from 'https://cdn.jsdelivr.net/npm/replaceDOMText/+esm'
 </script>
 ```
 
@@ -42,35 +42,31 @@ Or via CDN:
 ```
 
 ```ts
-import replaceDOMText from 'replaceDOMText';
+import replaceDOMText from 'replaceDOMText'
 
 replaceDOMText(document.getElementById('t')!, {
   find: /Hello/,
   wrap: 'em',
-});
+})
 ```
 
 **Result:**
 
 ```html
-<p id="t">
-  123 456 <em>Hello</em>
-</p>
+<p id="t">123 456 <em>Hello</em></p>
 ```
 
 ## 💡 Cross-Node Matching
 
 ```html
-<p id="t">
-  123 456 Hell<span>o Goodbye</span>
-</p>
+<p id="t">123 456 Hell<span>o Goodbye</span></p>
 ```
 
 ```ts
 replaceDOMText(document.getElementById('t')!, {
   find: /Hello/,
   wrap: 'em',
-});
+})
 ```
 
 **Result:**
@@ -86,8 +82,8 @@ replaceDOMText(document.getElementById('t')!, {
 ```ts
 replaceDOMText(
   element: Element | Text,
-  options: ReplaceDOMTextOptions
-): Finder;
+  options: ReplaceDOMTextOptions,
+): Finder
 ```
 
 ### `ReplaceDOMTextOptions`
@@ -109,23 +105,19 @@ replaceDOMText(
 replaceDOMText(document.getElementById('container')!, {
   find: 'function',
   replace: (portion, match) => `[${portion.index}]`,
-});
+})
 ```
 
 **Input:**
 
 ```html
-<div id="container">
-  Explaining how to write a replace <em>fun</em>ction
-</div>
+<div id="container">Explaining how to write a replace <em>fun</em>ction</div>
 ```
 
 **Output:**
 
 ```html
-<div id="container">
-  Explaining how to write a replace <em>[0]</em>[1]
-</div>
+<div id="container">Explaining how to write a replace <em>[0]</em>[1]</div>
 ```
 
 ### 🎨 Wrapping Matches
@@ -135,7 +127,7 @@ replaceDOMText(document.getElementById('container')!, {
   find: 'with ',
   wrap: 'em',
   wrapClass: 'highlight',
-});
+})
 ```
 
 **CSS:**
@@ -161,16 +153,16 @@ replaceDOMText(document.getElementById('test')!, {
   find: 'amazing',
   wrap: 'em',
   forceContext: el => el.matches('p'),
-});
+})
 ```
 
 ### 🧰 Instance API
 
 ```ts
-const finder = replaceDOMText(node, options);
+const finder = replaceDOMText(node, options)
 
 // Revert changes
-finder.revert();
+finder.revert()
 ```
 
 > ⚠️ Reversion only works if the DOM has not been modified after replacement.
@@ -187,7 +179,7 @@ replaceDOMText(element, {
   preset: 'prose',
   find: 'something',
   replace: 'something else',
-});
+})
 ```
 
 ## 🧾 Type Definitions
@@ -199,12 +191,12 @@ import replaceDOMText, {
   Finder,
   Portion,
   ReplaceDOMTextOptions,
-} from 'replaceDOMText';
+} from 'replaceDOMText'
 ```
 
 ## 🧩 Example Projects
 
-* [Kanji Typesetting](https://github.com/syhily/kanji-typesetting)
+- [Kanji Typesetting](https://github.com/syhily/kanji-typesetting)
 
 ## 📜 License
 
