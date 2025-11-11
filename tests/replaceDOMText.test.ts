@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import findAndReplaceDOMText, { NON_INLINE_PROSE, PortionMode, Preset } from '../src/replaceDOMText'
+import findAndReplaceDOMText, { NON_INLINE_PROSE, PortionMode, Preset } from '../src/index'
 
 function htmlEqual(a: string, b: string) {
   a = a.toLowerCase().replace(/[\r\n]/g, '')
