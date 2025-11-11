@@ -1,7 +1,7 @@
-# replaceDOMText
+# replace-dom-text
 
-[![npm version](https://img.shields.io/npm/v/replaceDOMText.svg?style=flat-square)](https://www.npmjs.com/package/replaceDOMText)
-[![npm bundle size](https://img.shields.io/bundlephobia/minzip/replaceDOMText?style=flat-square)](https://bundlephobia.com/package/replaceDOMText)
+[![npm version](https://img.shields.io/npm/v/replace-dom-text.svg?style=flat-square)](https://www.npmjs.com/package/replace-dom-text)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/replace-dom-text?style=flat-square)](https://bundlephobia.com/package/replace-dom-text)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 [![ESM Only](https://img.shields.io/badge/module-ESM%20only-brightgreen?style=flat-square)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
@@ -24,14 +24,14 @@ Now written in **TypeScript**, distributed as **ES modules**, and fully typed fo
 ## 🚀 Installation
 
 ```bash
-npm install replaceDOMText
+npm install replace-dom-text
 ```
 
 Or via CDN:
 
 ```html
 <script type="module">
-  import replaceDOMText from 'https://cdn.jsdelivr.net/npm/replaceDOMText/+esm'
+  import replaceDOMText from 'https://cdn.jsdelivr.net/npm/replace-dom-text/+esm'
 </script>
 ```
 
@@ -42,7 +42,7 @@ Or via CDN:
 ```
 
 ```ts
-import replaceDOMText from 'replaceDOMText'
+import replaceDOMText from 'replace-dom-text'
 
 replaceDOMText(document.getElementById('t')!, {
   find: /Hello/,
@@ -82,11 +82,11 @@ replaceDOMText(document.getElementById('t')!, {
 ```ts
 replaceDOMText(
   element: Element | Text,
-  options: ReplaceDOMTextOptions,
+  options: Options,
 ): Finder
 ```
 
-### `ReplaceDOMTextOptions`
+### `Options`
 
 | Option             | Type                                           | Description                                                                                      |
 | ------------------ | ---------------------------------------------- | ------------------------------------------------------------------------------------------------ |
@@ -190,8 +190,8 @@ TypeScript users get full type support out of the box:
 import replaceDOMText, {
   Finder,
   Portion,
-  ReplaceDOMTextOptions,
-} from 'replaceDOMText'
+  Options,
+} from 'replace-dom-text'
 ```
 
 ## 🧩 Example Projects

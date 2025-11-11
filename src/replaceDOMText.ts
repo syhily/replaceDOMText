@@ -13,7 +13,7 @@ export enum Preset {
   PROSE = 'prose',
 }
 
-interface Portion {
+export interface Portion {
   node: Text | HTMLElement
   index: number
   text: string
@@ -23,14 +23,14 @@ interface Portion {
   isEnd?: boolean
 }
 
-interface MatchWithMeta extends RegExpMatchArray {
+export interface MatchWithMeta extends RegExpMatchArray {
   startIndex: number
   endIndex: number
   index: number
   input: string
 }
 
-interface Options {
+export interface Options {
   /**
    * Something to search for. A string will perform a global search by default (looking for all matches),
    * but a RegExp will only do so if you include the global (/.../g) flag.
@@ -78,16 +78,16 @@ interface Options {
   preset?: Preset | undefined
 }
 
-interface Return {
+export interface Return {
   /**
    * Reversion occurs backwards so as to avoid nodes subsequently replaced during the matching phase.
    */
   revert: () => Return
 }
 
-type TextAgg = Array<string | TextAgg>
+export type TextAgg = Array<string | TextAgg>
 
-const NON_PROSE_ELEMENTS = {
+export const NON_PROSE_ELEMENTS = {
   br: 1,
   hr: 1,
   // Media / Source elements:
@@ -111,7 +111,7 @@ const NON_PROSE_ELEMENTS = {
 
 // Elements that will not contain prose or block elements where we don't
 // want prose to be matches across element borders:
-const NON_CONTIGUOUS_PROSE_ELEMENTS = {
+export const NON_CONTIGUOUS_PROSE_ELEMENTS = {
   // Block Elements
   address: 1,
   article: 1,
@@ -192,10 +192,6 @@ export const PRESETS: Record<string, Partial<Required<Options>>> = {
   },
 }
 
-function escapeRegExp(str: string): string {
-  return String(str).replace(/([.*+?^=!:${}()|[\]/\\])/g, '\\$1')
-}
-
 /**
  * Entry point.
  *
@@ -209,7 +205,7 @@ export default function findAndReplaceDOMText(node: HTMLElement, options: Option
 /**
  * Finder -- encapsulates logic to find and replace.
  */
-class Finder implements Return {
+export class Finder implements Return {
   private node: HTMLElement
   private options: Options
   private reverts: Array<() => void> = []
@@ -238,6 +234,9 @@ class Finder implements Return {
    * Searches for all matches that comply with the instance's 'match' option
    */
   private search(): MatchWithMeta[] {
+    function escapeRegExp(str: string): string {
+      return String(str).replace(/([.*+?^=!:${}()|[\]/\\])/g, '\\$1')
+    }
     let matchIndex = 0
     let offset = 0
     const rawFind = this.options.find
