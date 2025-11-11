@@ -1,17 +1,17 @@
 {
-  "name": "replaceDOMText",
+  "name": "replace-dom-text",
   "type": "module",
   "version": "1.0.0",
   "description": "A lightweight utility to find and replace text within DOM nodes.",
   "author": "Yufan Sheng <syhily@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/syhily/replaceDOMText#readme",
+  "homepage": "https://github.com/syhily/replace-dom-text#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/syhily/replaceDOMText.git"
+    "url": "https://github.com/syhily/replace-dom-text.git"
   },
   "bugs": {
-    "url": "https://github.com/syhily/replaceDOMText/issues"
+    "url": "https://github.com/syhily/replace-dom-text/issues"
   },
   "keywords": [
     "dom",
@@ -41,7 +41,7 @@
     "node": ">=18"
   },
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "build": "rimraf dist && tsup src/index.ts --format esm,cjs --dts",
     "clean": "rimraf dist",
     "dev": "tsup src/index.ts --watch",
     "lint": "eslint . --ext .ts",
